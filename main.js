@@ -1,12 +1,30 @@
-function tocaSomPom () {
-    document.querySelector('#som_tecla_pom').play();
+function tocaSom (idElementoAudio) {
+    document.querySelector(idElementoAudio).play();
 }
 
 
-document.querySelector('.tecla_pom').onclick = tocaSomPom;
+const listaDeTeclas = document.querySelectorAll('.tecla')
 
-function tocaSomClap () {
-    document.querySelector('#som_tecla_clap').play();
+let contador = 0;
+
+//enquanto - while
+//para - for
+while (contador < listaDeTeclas.length) {
+
+    const tecla = listaDeTeclas[contador];
+    const instrumento = tecla.classList[1];
+    //const idAudio = '#som_'+instrumento;
+    
+    //template string - uma das formas de concatenar uma variavel na string
+    const idAudio = `#som_${instrumento}`;
+
+    //console.log(idAudio);
+    
+
+    tecla.onclick = function () {
+        tocaSom(idAudio);
+    }
+
+    contador = contador + 1;
+   // console.log(contador);
 }
-
-document.querySelector('.tecla_clap').onclick = tocaSomClap;
