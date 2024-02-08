@@ -5,7 +5,7 @@ function tocaSom(seletorAudio) {
         elemento.play();
     }
 
-    else {
+    else { // else - se não
         //alert('elemento não encontrado');
         console.log('elemento não encontrado ou seletor inválido');
     }
